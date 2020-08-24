@@ -101,6 +101,7 @@ $(function(){
 	  var timeinterval = setInterval(updateClock, 1000);
 	  }
 	}
+	var futureTime = new Date('Oct 01, 2020').getTime();
 	var deadline = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000);
 	initializeClock('clockdiv', deadline);
 
