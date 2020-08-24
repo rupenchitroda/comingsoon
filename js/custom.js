@@ -63,10 +63,11 @@ $(function(){
 		multiItem.slick('setPosition');
 		multiItem2.slick('setPosition');
 	});
+
+	//------------------------------------------------------------------------------
 	// js for time count down
 	function getTimeRemaining(endtime) {
-	  var countDown = new Date('Oct 1, 2020 00:00:00').getTime();
-	  var t = Date.parse(countDown) - Date.parse(new Date());
+	  var t = Date.parse(endtime) - Date.parse(new Date());
 	  var seconds = Math.floor((t / 1000) % 60);
 	  var minutes = Math.floor((t / 1000 / 60) % 60);
 	  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
@@ -102,10 +103,12 @@ $(function(){
 	  var timeinterval = setInterval(updateClock, 1000);
 	  }
 	}
-	var futureTime = new Date('Oct 01, 2020').getTime();
-	console.log(futureTime);
-	var deadline = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000);
+	var deadline = new Date('Oct 1, 2020 00:00:00');
+	// var deadline = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000);
 	initializeClock('clockdiv', deadline);
+
+	//----------------------------------------------------------------------------------
+	
 
 	//js for twitter
 	var tweets = jQuery(".tweet");
