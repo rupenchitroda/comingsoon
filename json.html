@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="mypanel"></div>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+    		var apikey = "fe3e4778";
+    		var movie = "Dunkirk";
+    		var finalURL = "http://www.omdbapi.com/?apikey=" + apikey + "&t=" + movie;
+			$.ajax({
+				url: finalURL,
+				success: function (data) {
+					var text = `Title: ${data.Title}<br>
+	                    Year: ${data.Year}<br>
+	                    IMDB : ${data.imdbRating} <br>
+	                    Source : ${data.Ratings[0]['Value']}`
+	                    
+			        $(".mypanel").html(text);
+				}
+			});
+		});
+    </script>
+    
+</body>
+</html>
